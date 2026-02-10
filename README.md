@@ -1,6 +1,10 @@
 # Incepto House Website Clone
 
-A beautiful, static recreation of the Incepto House website (originally hosted at https://bento.me/incepto), featuring a modern Bento-style grid layout.
+A beautiful, static recreation of the Incepto House website, featuring a modern Bento-style grid layout.
+
+- **Original**: https://bento.me/incepto
+- **Live site**: https://incepto.house
+- **GitHub**: https://github.com/tmad4000/incepto-house
 
 ## 🏠 About Incepto House
 
@@ -21,7 +25,7 @@ Heart-centered intellectual house in Menlo Park, CA, near Stanford University.
 
 ```
 incepto-house-clone/
-├── incepto.html          # Main HTML file
+├── index.html            # Main HTML file
 ├── styles.css            # All styling (modern CSS with variables)
 ├── script.js             # Interactive features
 ├── assets/
@@ -32,7 +36,6 @@ incepto-house-clone/
 │   │   ├── Screenshots
 │   │   └── Icons
 │   └── url-mapping.json  # Original URL → local path mapping
-├── index.html            # Original fetched HTML (backup)
 └── README.md             # This file
 ```
 
@@ -42,13 +45,13 @@ incepto-house-clone/
 
 1. **Open in Browser**:
    ```bash
-   open incepto.html
+   open index.html
    ```
 
 2. **Or use a local server**:
    ```bash
    python3 -m http.server 8000
-   # Then visit: http://localhost:8000/incepto.html
+   # Then visit: http://localhost:8000/index.html
    ```
 
 ### Deployment Options
@@ -77,7 +80,7 @@ git push -u origin main
 #### Option 4: AWS S3
 ```bash
 aws s3 sync . s3://your-bucket-name --exclude "*.md" --exclude ".git/*"
-aws s3 website s3://your-bucket-name --index-document incepto.html
+aws s3 website s3://your-bucket-name --index-document index.html
 ```
 
 ## 🎨 Customization with Claude Code
@@ -151,7 +154,7 @@ This site is designed to be easily updated using Claude Code. Here are common ta
 3. Add alt text for accessibility
 
 ### Updating Links
-1. Open `incepto.html`
+1. Open `index.html`
 2. Find the relevant card
 3. Update the `href` and text content
 
