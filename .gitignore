@@ -1,0 +1,31 @@
+# Screenshots and test images
+*.png
+full-page-check.png
+screenshot*.png
+test-full.png
+
+# Logs
+*.log
+
+# Original scraped page
+assets.txt
+
+# Scripts
+download_assets.sh
+
+# Original scraped page (renamed)
+index-original-scraped.html
+
+# Docs (not needed in deploy)
+DEPLOY.md
+QUICKSTART.md
+PROJECT_STRUCTURE.txt
+SUMMARY.txt
+
+# Asset reports
+assets/download-report.txt
+assets/url-mapping.json
+assets/image_mapping.json
+
+# OS files
+.DS_Store
