@@ -29,3 +29,4 @@ assets/image_mapping.json
 
 # OS files
 .DS_Store
+.vercel
