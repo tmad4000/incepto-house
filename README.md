@@ -1,10 +1,12 @@
-# Incepto House Website Clone
+# Incepto House Website
 
-A beautiful, static recreation of the Incepto House website, featuring a modern Bento-style grid layout.
+> **This is the current, active Incepto House website.** The old Next.js version is archived at [inceptowebsitebentoclone-old](https://github.com/tmad4000/inceptowebsitebentoclone-old).
 
-- **Original**: https://bento.me/incepto
+A beautiful, static Bento-style grid layout site for Incepto House.
+
 - **Live site**: https://incepto.house
 - **GitHub**: https://github.com/tmad4000/incepto-house
+- **Based on**: https://bento.me/incepto
 
 ## 🏠 About Incepto House
 
