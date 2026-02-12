@@ -105,6 +105,33 @@ img {
     opacity: 0.8;
 }
 
+/* House Quote */
+.house-quote {
+    margin: 32px auto 0;
+    padding: 24px 32px;
+    max-width: 480px;
+    border-left: 4px solid var(--accent);
+    background: var(--secondary-bg);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.house-quote p {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.house-quote cite {
+    font-size: 14px;
+    font-style: normal;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
 /* Bento Grid */
 .bento-grid {
     display: grid;
