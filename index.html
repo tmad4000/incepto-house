@@ -18,293 +18,345 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <div class="profile-section">
-                <img src="assets/images/96_users%252Fclijshtx200mrol01rllybfmx%252FTitNTkLOB3dXeNn6-E289C0B4-B5B9-45B6-8467-81AAD3AE836C.jpeg" alt="Incepto House" class="avatar">
-                <h1 class="title">Incepto House</h1>
-                <p class="bio">Heart-centered intellectual house in Menlo Park, CA, near Stanford University</p>
-                <p class="contact">Contact: <a href="mailto:incepto.house@gmail.com">incepto.house@gmail.com</a></p>
-                <blockquote class="house-quote">
-                    <p>&ldquo;Live in the future, then build what&rsquo;s missing.&rdquo;</p>
-                    <cite>&mdash; Paul Graham</cite>
-                </blockquote>
+    <div class="bento-page">
+        <!-- Left Sidebar -->
+        <aside class="bento-sidebar">
+            <img src="assets/images/96_users%252Fclijshtx200mrol01rllybfmx%252FTitNTkLOB3dXeNn6-E289C0B4-B5B9-45B6-8467-81AAD3AE836C.jpeg" alt="Incepto House" class="avatar">
+            <h1 class="sidebar-title">Incepto House</h1>
+            <p class="sidebar-bio">Heart-centered intellectual house in Menlo Park, CA, near Stanford University</p>
+            <p class="sidebar-contact">Contact: <a href="mailto:incepto.house@gmail.com">incepto.house@gmail.com</a></p>
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-icon" id="theme-icon">&#9728;&#65039;</span>
+                    <span id="theme-label">Light</span>
+                </button>
             </div>
-        </header>
+        </aside>
 
-        <!-- Main Content Grid -->
+        <!-- Right Content Grid -->
         <main class="bento-grid">
-            <!-- Photo Gallery Section -->
-            <section class="gallery-section span-2">
-                <h2>Incepto House</h2>
-                <div class="photo-grid">
-                    <img src="assets/images/91_users%252Fclijshtx200mrol01rllybfmx%252F6BVKmc7OVY42P8Dq-backgroundfullsplashpicture.jpg" alt="Incepto House" loading="lazy">
-                    <img src="assets/images/90_users%252Fclijshtx200mrol01rllybfmx%252F4vgyLhiJJJyPtLpw-inceptolivingroompicture.jpg" alt="Living Room" loading="lazy">
-                    <img src="assets/images/92_users%252Fclijshtx200mrol01rllybfmx%252FBVUqCUz2o1QbW9mP-inceptolivingworkspacepicture.jpg" alt="Workspace" loading="lazy">
-                    <img src="assets/images/93_users%252Fclijshtx200mrol01rllybfmx%252FJl8HLPcjTE50tFK5-inceptodiningpicture.jpg" alt="Dining Area" loading="lazy">
-                    <img src="assets/images/94_users%252Fclijshtx200mrol01rllybfmx%252FSdNvNi89SNAyxb7D-incepto%252520backyard%252520landing%252520page%252520image1.png" alt="Backyard" loading="lazy">
-                    <img src="assets/images/95_users%252Fclijshtx200mrol01rllybfmx%252FTTeNmkfGVSih1muf-inceptokitchenpicture.jpg" alt="Kitchen" loading="lazy">
-                    <img src="assets/images/97_users%252Fclijshtx200mrol01rllybfmx%252FsZk9AyYRjPEiprgd-inceptoart.jpg" alt="Art" loading="lazy">
-                </div>
-            </section>
+            <!-- Google Maps card (wide) -->
+            <a href="https://www.google.com/maps/place/West+Menlo+Park,+CA/" class="widget widget--map widget--wide" target="_blank" rel="noopener">
+                <img src="assets/images/71_76021ec19ebf.jpeg" alt="West Menlo Park, CA, USA" loading="lazy">
+                <span class="widget__map-label">West Menlo Park, CA, USA</span>
+            </a>
 
-            <!-- Useful Links -->
-            <section class="links-section">
+            <!-- House Photos -->
+            <div class="widget widget--photo widget--tall" data-lightbox>
+                <img src="assets/images/94_users%252Fclijshtx200mrol01rllybfmx%252FSdNvNi89SNAyxb7D-incepto%252520backyard%252520landing%252520page%252520image1.png" alt="Backyard" loading="lazy">
+            </div>
+
+            <div class="widget widget--photo widget--2x2" data-lightbox>
+                <img src="assets/images/90_users%252Fclijshtx200mrol01rllybfmx%252F4vgyLhiJJJyPtLpw-inceptolivingroompicture.jpg" alt="Living Room" loading="lazy">
+                <span class="widget__caption">Our lovely living room / library</span>
+            </div>
+
+            <div class="widget widget--photo" data-lightbox>
+                <img src="assets/images/92_users%252Fclijshtx200mrol01rllybfmx%252FBVUqCUz2o1QbW9mP-inceptolivingworkspacepicture.jpg" alt="Workspace" loading="lazy">
+            </div>
+
+            <div class="widget widget--photo widget--tall" data-lightbox>
+                <img src="assets/images/91_users%252Fclijshtx200mrol01rllybfmx%252F6BVKmc7OVY42P8Dq-backgroundfullsplashpicture.jpg" alt="Incepto House" loading="lazy">
+            </div>
+
+            <div class="widget widget--photo widget--wide" data-lightbox>
+                <img src="assets/images/93_users%252Fclijshtx200mrol01rllybfmx%252FJl8HLPcjTE50tFK5-inceptodiningpicture.jpg" alt="Dining Area" loading="lazy">
+            </div>
+
+            <div class="widget widget--photo widget--wide" data-lightbox>
+                <img src="assets/images/95_users%252Fclijshtx200mrol01rllybfmx%252FTTeNmkfGVSih1muf-inceptokitchenpicture.jpg" alt="Kitchen" loading="lazy">
+            </div>
+
+            <!-- House Map link -->
+            <a href="http://map.incepto.house" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/63_63ef55d37748.jpeg" alt="House Map" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">House Map</span>
+                    <span class="widget__link-host">map.incepto.house</span>
+                </div>
+            </a>
+
+            <!-- Quote card -->
+            <div class="widget widget--quote widget--wide">
+                <span class="widget__quote-mark">&ldquo;</span>
+                <p class="widget__quote-text">Live in the future, then build what&rsquo;s missing.</p>
+                <cite class="widget__quote-cite">&mdash; Paul Graham</cite>
+            </div>
+
+            <!-- Useful Links header -->
+            <div class="widget widget--header widget--full">
                 <h2>Useful Links</h2>
-                <div class="link-grid">
-                    <a href="https://qigong.incepto.house/" class="link-card" target="_blank" rel="noopener">
-                        <img src="assets/images/78_22ca885021c9.jpeg" alt="Qigong">
-                        <span>Qigong Guide</span>
-                    </a>
-                    <a href="https://www.google.com/maps/@37.4255499,-122.2030209,13z" class="link-card" target="_blank" rel="noopener">
-                        <img src="assets/images/71_76021ec19ebf.jpeg" alt="Map">
-                        <span>View on Map</span>
-                    </a>
-                    <a href="http://map.incepto.house" class="link-card" target="_blank" rel="noopener">
-                        <img src="assets/images/63_63ef55d37748.jpeg" alt="House Map">
-                        <span>House Map</span>
-                    </a>
-                    <a href="https://ideaflow.app/shared/m0uPb_2bFJ" class="link-card" target="_blank" rel="noopener">
-                        <img src="assets/images/27_sites%252Fogimages%252FaHR0cHM6Ly93d3cubm90aW9uLnNvL2ltYWdlcy9tZXRhL2RlZmF1bHQucG5n.png" alt="Tips for Living Well">
-                        <span>Tips for Living Well</span>
-                    </a>
-                    <a href="https://ideaflow.app/shared/QOsxSyLssz" class="link-card" target="_blank" rel="noopener">
-                        <img src="assets/images/27_sites%252Fogimages%252FaHR0cHM6Ly93d3cubm90aW9uLnNvL2ltYWdlcy9tZXRhL2RlZmF1bHQucG5n.png" alt="Good Coliving Habits">
-                        <span>Good Coliving Habits</span>
-                    </a>
-                </div>
-            </section>
+            </div>
 
-            <!-- Built by Inceptans -->
-            <section class="startups-section span-2">
+            <a href="https://ideaflow.app/shared/m0uPb_2bFJ" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/27_sites%252Fogimages%252FaHR0cHM6Ly93d3cubm90aW9uLnNvL2ltYWdlcy9tZXRhL2RlZmF1bHQucG5n.png" alt="Tips for Living Well" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Tips for Living Well</span>
+                    <span class="widget__link-host">ideaflow.app</span>
+                </div>
+            </a>
+
+            <a href="https://ideaflow.app/shared/QOsxSyLssz" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/27_sites%252Fogimages%252FaHR0cHM6Ly93d3cubm90aW9uLnNvL2ltYWdlcy9tZXRhL2RlZmF1bHQucG5n.png" alt="Good Coliving Habits" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Good Coliving Habits</span>
+                    <span class="widget__link-host">ideaflow.app</span>
+                </div>
+            </a>
+
+            <a href="https://qigong.incepto.house/" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/78_22ca885021c9.jpeg" alt="Qigong Guide" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Qigong Guide</span>
+                    <span class="widget__link-host">qigong.incepto.house</span>
+                </div>
+            </a>
+
+            <!-- Built by Inceptans header -->
+            <div class="widget widget--header widget--full">
                 <h2>Built by Inceptans 🚀</h2>
-                <div class="startup-grid">
-                    <a href="https://luminai.com" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/79_55b4c0b3d7ba.jpeg" alt="Luminai">
-                        <div class="startup-info">
-                            <h3>Luminai</h3>
-                            <p>AI-powered automation platform</p>
-                        </div>
-                    </a>
-                    <a href="https://ideaflow.app" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/30_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS81ZWY5NWFlMjJhMjUxZTBjOTAzMDgwMGUvNWY1OWEwOWIyZDExZmIxMzg0Yzk1NzkyX1ByZXZpZXclMjBJbWFnZSUyMDYucG5n.png" alt="Ideaflow">
-                        <div class="startup-info">
-                            <h3>Ideaflow</h3>
-                            <p>AI-enhanced note-taking</p>
-                        </div>
-                    </a>
-                    <!-- Domain expired - archived 2026-02-11
-                    <a href="http://pesto.tech" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/33_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82NTE1OWU4NDRmOGYwOGE3MmNlZmEyYWEvNjYzOWNmYjA5ZmYxZGI0ZWUyNmIyZjhjX2ltYWdlLnBuZw%253D%253D.png" alt="Pesto">
-                        <div class="startup-info">
-                            <h3>Pesto Tech</h3>
-                            <p>Career advancement platform</p>
-                        </div>
-                    </a>
-                    -->
-                    <!-- Former startup - no longer active
-                    <a href="http://meethazel.ai" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/35_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82OTQ5NmRjOTI3ZTNiMWY0MDFlMDQ1MjYvNjk2ZjdlZDkyMjI5ZGNmMTRmNjBmMjRmX2hhemVsLWJyb3duLW9wZW5ncmFwaC5wbmc%253D.png" alt="Hazel">
-                        <div class="startup-info">
-                            <h3>Hazel</h3>
-                            <p>AI sales assistant</p>
-                        </div>
-                    </a>
-                    -->
-                    <a href="http://ambiencehealthcare.com" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/31_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82N2NlZjc3NjRlZGRkNTU2NTQ1NjBmODMvNjdkMDY5NmRhMDk4NTgxNjlhODQ3NDZiX09wZW4lMjBHcmFwaCUyMEltYWdlLnBuZw%253D%253D.png" alt="Ambience Healthcare">
-                        <div class="startup-info">
-                            <h3>Ambience Healthcare</h3>
-                            <p>AI medical documentation</p>
-                        </div>
-                    </a>
-                    <a href="https://cresta.com" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/32_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82N2ZlNDliZjIxYjlmOWQ1YjkxMGQzYzkvNjg3NTBiODc4ZmY4N2FjMDM3NWY5MGJlX1dlYnNpdGUtT0ctMS0zLmpwZw%253D%253D.jpeg" alt="Cresta">
-                        <div class="startup-info">
-                            <h3>Cresta</h3>
-                            <p>AI for contact centers</p>
-                        </div>
-                    </a>
-                    <a href="http://vivatranslate.com" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/28_sites%252Fogimages%252FaHR0cHM6Ly93d3cudml2YXRyYW5zbGF0ZS5jb20vYXNzZXRzL2ltYWdlcy9FTi9mYWNlYm9vay5qcGc%253D.jpeg" alt="Viva Translate">
-                        <div class="startup-info">
-                            <h3>Viva Translate</h3>
-                            <p>Translation services</p>
-                        </div>
-                    </a>
-                    <!-- Site returns 404 - archived 2026-02-11
-                    <a href="https://hellopareto.com/" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/34_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82OGFmMDNkYjQ0YmI1NGI3YmNmM2VmMGEvNjhkZGIzNWQ0NWIyMDgwMTA3NDI1NmRlX1BhcmV0by1XZWJzaXRlLVNFTy5wbmc%253D.png" alt="Pareto AI">
-                        <div class="startup-info">
-                            <h3>Pareto AI</h3>
-                            <p>AI sales optimization</p>
-                        </div>
-                    </a>
-                    -->
-                    <a href="https://roadflex.com" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/25_sites%252Ffavicons%252FaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2Nkbi5yb2FkZmxleC5jb20vc3ZnL3JvYWRmbGV4LWxvZ28uc3Zn.svg" alt="RoadFlex">
-                        <div class="startup-info">
-                            <h3>RoadFlex</h3>
-                            <p>Vehicle finance platform</p>
-                        </div>
-                    </a>
-                    <!-- Domain parked on Sedo - archived 2026-02-11
-                    <a href="http://deepform.ai" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/38_sites%252Fogimages%252FaHR0cHM6Ly9mcmFtZXJ1c2VyY29udGVudC5jb20vaW1hZ2VzL2wyamJ6RzBXems3R0pZdDMxbTJRelU4Mkp6US5wbmc%253D.png" alt="DeepForm">
-                        <div class="startup-info">
-                            <h3>DeepForm</h3>
-                            <p>AI form automation</p>
-                        </div>
-                    </a>
-                    -->
-                    <a href="https://trydatedrop.com" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/datedrop.png" alt="Date Drop">
-                        <div class="startup-info">
-                            <h3>Date Drop</h3>
-                            <p>College matchmaking platform</p>
-                        </div>
-                    </a>
-                    <a href="http://nvctranslator.com/" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/65_ddef50646826.jpeg" alt="NVC Translator">
-                        <div class="startup-info">
-                            <h3>NVC Translator</h3>
-                            <p>Nonviolent communication tool</p>
-                        </div>
-                    </a>
-                    <a href="https://exa.ai" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/80_130c66d2e9a0.jpeg" alt="Exa">
-                        <div class="startup-info">
-                            <h3>Exa (formerly Metaphor)</h3>
-                            <p>AI-powered search engine</p>
-                        </div>
-                    </a>
-                    <a href="https://truefi.io" class="startup-card" target="_blank" rel="noopener">
-                        <img src="assets/images/37_sites%252Fogimages%252FaHR0cHM6Ly9kM24zMmlsdWZ4dXZkMS5jbG91ZGZyb250Lm5ldC81ZThmNzUyOTcyMjI3MjAwNWQxYzZlNDEvMjM1MDc3Ny9zY3JlZW5zaG90LWQ1NWZiOTNhLWJiOTUtNGIyZi05YzFhLWQwNzIyZTU0NjczYV9yZWFkeXNjcl8xMDI0LmpwZw%253D%253D.jpeg" alt="TrueFi">
-                        <div class="startup-info">
-                            <h3>TrueFi</h3>
-                            <p>DeFi uncollateralized lending</p>
-                        </div>
-                    </a>
-                </div>
-            </section>
+            </div>
 
-            <!-- Research & Publications -->
-            <section class="research-section">
-                <h2>Cool Projects</h2>
-                <div class="research-grid">
-                    <a href="https://paperswithcode.com/paper/reinforcement-learning-on-web-interfaces" class="research-card" target="_blank" rel="noopener">
-                        <img src="assets/images/29_sites%252Fogimages%252FaHR0cHM6Ly9jZG4tdGh1bWJuYWlscy5odWdnaW5nZmFjZS5jby9zb2NpYWwtdGh1bWJuYWlscy9wYXBlcnMvMTgwMi4wODgwMi9ncmFkaWVudC5wbmc%253D.png" alt="Research Paper">
-                        <span>RL on Web Interfaces</span>
-                    </a>
-                    <a href="https://proceedings.neurips.cc//paper_files/paper/2022/hash/3c44405d619a6920384a45bce876b41e-Abstract-Conference.html" class="research-card" target="_blank" rel="noopener">
-                        <img src="assets/images/86_e2755a6a7a83.jpeg" alt="NeurIPS">
-                        <span>NeurIPS 2022</span>
-                    </a>
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=U4WdgtwAAAAJ&citation_for_view=U4WdgtwAAAAJ:d1gkVwhDpl0C" class="research-card" target="_blank" rel="noopener">
-                        <img src="assets/images/85_05823b46930e.jpeg" alt="Google Scholar">
-                        <span>Citation Bias Research</span>
-                    </a>
-                    <a href="https://cris.maastrichtuniversity.nl/" class="research-card" target="_blank" rel="noopener">
-                        <img src="assets/images/36_sites%252Fogimages%252FaHR0cHM6Ly9jcmlzLm1hYXN0cmljaHR1bml2ZXJzaXR5Lm5sL3NraW4vaGVhZGVySW1hZ2Uv.jpeg" alt="Maastricht University">
-                        <span>Maastricht University Research</span>
-                    </a>
+            <a href="https://cresta.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/32_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82N2ZlNDliZjIxYjlmOWQ1YjkxMGQzYzkvNjg3NTBiODc4ZmY4N2FjMDM3NWY5MGJlX1dlYnNpdGUtT0ctMS0zLmpwZw%253D%253D.jpeg" alt="Cresta" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Cresta</span>
+                    <span class="widget__link-host">cresta.com</span>
                 </div>
-            </section>
+            </a>
 
-            <!-- Community -->
-            <section class="community-section">
-                <h2>Resources & Community</h2>
-                <div class="community-grid">
-                    <a href="https://openai.com/" class="community-card" target="_blank" rel="noopener">
-                        <img src="assets/images/84_42edcd8aa5c1.jpeg" alt="OpenAI">
-                        <span>OpenAI</span>
-                    </a>
-                    <!-- Not highlighting - Agora not doing great
-                    <a href="https://agora.community/discord" class="community-card" target="_blank" rel="noopener">
-                        <img src="assets/images/73_a7f63f4225a0.jpeg" alt="Agora">
-                        <span>Agora Discord</span>
-                    </a>
-                    -->
-                    <!-- Removed: Swarms Marketplace -->
-                    <a href="https://quartz.jzhao.xyz/" class="community-card" target="_blank" rel="noopener">
-                        <img src="assets/images/45_sites%252Fogimages%252FaHR0cHM6Ly9xdWFydHouanpoYW8ueHl6L2luZGV4LW9nLWltYWdlLndlYnA%253D.jpeg" alt="Quartz">
-                        <span>Quartz Documentation</span>
-                    </a>
-                    <a href="https://outliers.fund" class="community-card" target="_blank" rel="noopener">
-                        <img src="assets/images/44_sites%252Fogimages%252FaHR0cHM6Ly9vdXRsaWVycy52bWRhZ2VuY3kuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIyLzEwL291dGxpZXJzLW1ldGEtZ3JhcGguanBn.jpeg" alt="Outliers Fund">
-                        <span>Outliers Fund</span>
-                    </a>
+            <a href="https://ideaflow.app" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/30_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS81ZWY5NWFlMjJhMjUxZTBjOTAzMDgwMGUvNWY1OWEwOWIyZDExZmIxMzg0Yzk1NzkyX1ByZXZpZXclMjBJbWFnZSUyMDYucG5n.png" alt="Ideaflow" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Ideaflow</span>
+                    <span class="widget__link-host">ideaflow.app</span>
                 </div>
-            </section>
+            </a>
 
-            <!-- Playlists -->
-            <section class="playlists-section span-2">
-                <h2>Playlists 🎵</h2>
-                <div class="playlist-grid">
-                    <a href="https://open.spotify.com/playlist/0mleBz8liMlGj4OWJ1F6GI" class="playlist-card" target="_blank" rel="noopener">
-                        <img src="assets/images/playlist-classic-rock.jpeg" alt="Harmonious Classic Rock">
-                        <h3>Harmonious Classic Rock</h3>
-                        <p>Grateful Dead, Simon & Garfunkel, Elton John</p>
-                    </a>
-                    <a href="https://open.spotify.com/playlist/2uET10Y5WOjTOwIpytAyLs" class="playlist-card" target="_blank" rel="noopener">
-                        <img src="assets/images/playlist-trance-work.jpeg" alt="Trance Work Music">
-                        <h3>Trance Work Music</h3>
-                        <p>Dannic, Basshunter, Dimrain47, Mangoo</p>
-                    </a>
-                    <a href="https://open.spotify.com/artist/0Qfz1JTutH0uniNel8gcID" class="playlist-card" target="_blank" rel="noopener">
-                        <img src="assets/images/artist-doudou.jpeg" alt="DOU DOU">
-                        <h3>DOU DOU</h3>
-                        <p>Bilingual singer-songwriter</p>
-                    </a>
+            <a href="https://outliers.fund" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/44_sites%252Fogimages%252FaHR0cHM6Ly9vdXRsaWVycy52bWRhZ2VuY3kuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIyLzEwL291dGxpZXJzLW1ldGEtZ3JhcGguanBn.jpeg" alt="Outliers Fund" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Outliers Fund</span>
+                    <span class="widget__link-host">outliers.fund</span>
                 </div>
-            </section>
+            </a>
 
-            <!-- Fun Projects -->
-            <section class="fun-section">
-                <h2>Other Cool Stuff</h2>
-                <div class="fun-grid">
-                    <a href="http://Mind-video.com" class="fun-card" target="_blank" rel="noopener">
-                        <img src="assets/images/61_1bbc3dd67cdc.jpeg" alt="Mind Video">
-                        <span>Mind Video</span>
-                    </a>
-                    <a href="http://RsiWiki.jacobcole.net" class="fun-card" target="_blank" rel="noopener">
-                        <img src="assets/images/62_ab40473da575.jpeg" alt="RSI Wiki">
-                        <span>RSI Wiki</span>
-                    </a>
-                    <a href="http://admitsphere.jacobcole.net" class="fun-card" target="_blank" rel="noopener">
-                        <img src="assets/images/66_39486bb9cb96.jpeg" alt="Admitsphere">
-                        <span>Admitsphere</span>
-                    </a>
-                    <a href="https://easydefine.com/instadefine/" class="fun-card" target="_blank" rel="noopener">
-                        <img src="assets/images/75_bd198a6fea27.jpeg" alt="InstaDefine">
-                        <span>InstaDefine</span>
-                    </a>
+            <a href="https://openai.com/" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/84_42edcd8aa5c1.jpeg" alt="OpenAI" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">OpenAI</span>
+                    <span class="widget__link-host">openai.com</span>
                 </div>
-            </section>
+            </a>
 
-            <!-- YouTube Video -->
-            <section class="video-section span-2">
-                <h2>Community Video</h2>
-                <div class="video-container">
-                    <a href="https://youtu.be/_46AoSnHCRo" target="_blank" rel="noopener">
-                        <img src="assets/images/40_sites%252Fogimages%252FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9fNDZBb1NuSENSby9tYXhyZXNkZWZhdWx0LmpwZw%253D%253D.jpeg" alt="YouTube Video">
-                        <div class="play-button">▶</div>
-                    </a>
+            <a href="https://luminai.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/79_55b4c0b3d7ba.jpeg" alt="Luminai" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Luminai</span>
+                    <span class="widget__link-host">luminai.com</span>
                 </div>
-            </section>
+            </a>
+
+            <a href="https://truefi.io" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/37_sites%252Fogimages%252FaHR0cHM6Ly9kM24zMmlsdWZ4dXZkMS5jbG91ZGZyb250Lm5ldC81ZThmNzUyOTcyMjI3MjAwNWQxYzZlNDEvMjM1MDc3Ny9zY3JlZW5zaG90LWQ1NWZiOTNhLWJiOTUtNGIyZi05YzFhLWQwNzIyZTU0NjczYV9yZWFkeXNjcl8xMDI0LmpwZw%253D%253D.jpeg" alt="TrueFi" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">TrueFi</span>
+                    <span class="widget__link-host">truefi.io</span>
+                </div>
+            </a>
+
+            <a href="http://ambiencehealthcare.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/31_sites%252Fogimages%252FaHR0cHM6Ly9jZG4ucHJvZC53ZWJzaXRlLWZpbGVzLmNvbS82N2NlZjc3NjRlZGRkNTU2NTQ1NjBmODMvNjdkMDY5NmRhMDk4NTgxNjlhODQ3NDZiX09wZW4lMjBHcmFwaCUyMEltYWdlLnBuZw%253D%253D.png" alt="Ambience Healthcare" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Ambience Healthcare</span>
+                    <span class="widget__link-host">ambiencehealthcare.com</span>
+                </div>
+            </a>
+
+            <a href="https://roadflex.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/25_sites%252Ffavicons%252FaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2Nkbi5yb2FkZmxleC5jb20vc3ZnL3JvYWRmbGV4LWxvZ28uc3Zn.svg" alt="RoadFlex" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">RoadFlex</span>
+                    <span class="widget__link-host">roadflex.com</span>
+                </div>
+            </a>
+
+            <a href="http://vivatranslate.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/28_sites%252Fogimages%252FaHR0cHM6Ly93d3cudml2YXRyYW5zbGF0ZS5jb20vYXNzZXRzL2ltYWdlcy9FTi9mYWNlYm9vay5qcGc%253D.jpeg" alt="Viva Translate" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Viva Translate</span>
+                    <span class="widget__link-host">vivatranslate.com</span>
+                </div>
+            </a>
+
+            <a href="https://exa.ai" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/80_130c66d2e9a0.jpeg" alt="Exa" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Exa (formerly Metaphor)</span>
+                    <span class="widget__link-host">exa.ai</span>
+                </div>
+            </a>
+
+            <a href="https://trydatedrop.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/datedrop.png" alt="DateDrop" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">DateDrop</span>
+                    <span class="widget__link-host">trydatedrop.com</span>
+                </div>
+            </a>
+
+            <a href="http://nvctranslator.com/" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/65_ddef50646826.jpeg" alt="NVC Translator" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">NVC Translator</span>
+                    <span class="widget__link-host">nvctranslator.com</span>
+                </div>
+            </a>
+
+            <!-- Cool Projects header -->
+            <div class="widget widget--header widget--full">
+                <h2>Cool Projects from Inceptans</h2>
+            </div>
+
+            <a href="https://paperswithcode.com/paper/reinforcement-learning-on-web-interfaces" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/29_sites%252Fogimages%252FaHR0cHM6Ly9jZG4tdGh1bWJuYWlscy5odWdnaW5nZmFjZS5jby9zb2NpYWwtdGh1bWJuYWlscy9wYXBlcnMvMTgwMi4wODgwMi9ncmFkaWVudC5wbmc%253D.png" alt="RL on Web Interfaces" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">RL on Web Interfaces</span>
+                    <span class="widget__link-host">paperswithcode.com</span>
+                </div>
+            </a>
+
+            <a href="http://admitsphere.jacobcole.net" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/66_39486bb9cb96.jpeg" alt="Admitsphere" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Admitsphere</span>
+                    <span class="widget__link-host">admitsphere.jacobcole.net</span>
+                </div>
+            </a>
+
+            <!-- Art image card -->
+            <div class="widget widget--photo" data-lightbox>
+                <img src="assets/images/97_users%252Fclijshtx200mrol01rllybfmx%252FsZk9AyYRjPEiprgd-inceptoart.jpg" alt="Incepto Art" loading="lazy">
+            </div>
+
+            <!-- YouTube Video card -->
+            <a href="https://youtu.be/_46AoSnHCRo" class="widget widget--youtube" target="_blank" rel="noopener">
+                <img src="assets/images/40_sites%252Fogimages%252FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9fNDZBb1NuSENSby9tYXhyZXNkZWZhdWx0LmpwZw%253D%253D.jpeg" alt="Community Video" loading="lazy">
+                <div class="widget__play-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </a>
+
+            <a href="https://proceedings.neurips.cc//paper_files/paper/2022/hash/3c44405d619a6920384a45bce876b41e-Abstract-Conference.html" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/86_e2755a6a7a83.jpeg" alt="NeurIPS" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">NeurIPS 2022</span>
+                    <span class="widget__link-host">neurips.cc</span>
+                </div>
+            </a>
+
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=U4WdgtwAAAAJ&citation_for_view=U4WdgtwAAAAJ:d1gkVwhDpl0C" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/85_05823b46930e.jpeg" alt="Google Scholar" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Citation Bias Research</span>
+                    <span class="widget__link-host">scholar.google.com</span>
+                </div>
+            </a>
+
+            <a href="https://cris.maastrichtuniversity.nl/" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/36_sites%252Fogimages%252FaHR0cHM6Ly9jcmlzLm1hYXN0cmljaHR1bml2ZXJzaXR5Lm5sL3NraW4vaGVhZGVySW1hZ2Uv.jpeg" alt="Maastricht University" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Maastricht University</span>
+                    <span class="widget__link-host">maastrichtuniversity.nl</span>
+                </div>
+            </a>
+
+            <a href="http://RsiWiki.jacobcole.net" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/62_ab40473da575.jpeg" alt="RSI Wiki" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">RSI Wiki</span>
+                    <span class="widget__link-host">rsiwiki.jacobcole.net</span>
+                </div>
+            </a>
+
+            <a href="https://easydefine.com/instadefine/" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/75_bd198a6fea27.jpeg" alt="InstaDefine" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">InstaDefine</span>
+                    <span class="widget__link-host">easydefine.com</span>
+                </div>
+            </a>
+
+            <a href="http://Mind-video.com" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/61_1bbc3dd67cdc.jpeg" alt="Mind Video" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Mind Video</span>
+                    <span class="widget__link-host">mind-video.com</span>
+                </div>
+            </a>
+
+            <a href="https://quartz.jzhao.xyz/" class="widget widget--link" target="_blank" rel="noopener">
+                <img src="assets/images/45_sites%252Fogimages%252FaHR0cHM6Ly9xdWFydHouanpoYW8ueHl6L2luZGV4LW9nLWltYWdlLndlYnA%253D.jpeg" alt="Quartz" class="widget__icon">
+                <div class="widget__link-text">
+                    <span class="widget__link-title">Quartz Documentation</span>
+                    <span class="widget__link-host">quartz.jzhao.xyz</span>
+                </div>
+            </a>
+
+            <!-- Playlists header -->
+            <div class="widget widget--header widget--full">
+                <h2>Playlists</h2>
+            </div>
+
+            <a href="https://open.spotify.com/playlist/0mleBz8liMlGj4OWJ1F6GI" class="widget widget--spotify widget--2x2" target="_blank" rel="noopener">
+                <div class="widget__spotify-inner">
+                    <img src="assets/images/playlist-classic-rock.jpeg" alt="Harmonious Classic Rock" class="widget__spotify-cover">
+                    <div class="widget__spotify-info">
+                        <span class="widget__spotify-title">Harmonious Classic Rock</span>
+                        <span class="widget__spotify-artist">Grateful Dead, Simon & Garfunkel, Elton John</span>
+                        <div class="widget__spotify-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/><path d="M17.9 10.9C14.7 9 9.4 8.8 6.4 9.7c-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1C9.1 7 15.1 7.2 18.8 9.4c.4.3.6.8.3 1.3-.2.4-.7.5-1.2.2zm-.2 2.7c-.2.4-.7.5-1 .3C14 12.3 10 11.8 7 12.8c-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1C10 10.1 14.5 10.6 17.5 12.4c.3.2.5.7.2 1.2zm-1.1 2.6c-.2.3-.5.4-.8.2C13.4 14.8 10.4 14.5 7.4 15.2c-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8C10.5 13 13.7 13.4 16.5 15.1c.3.2.4.6.1.9z" fill="#fff"/></svg>
+                            Spotify
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://open.spotify.com/playlist/2uET10Y5WOjTOwIpytAyLs" class="widget widget--spotify widget--2x2" target="_blank" rel="noopener">
+                <div class="widget__spotify-inner">
+                    <img src="assets/images/playlist-trance-work.jpeg" alt="Trance Work Music" class="widget__spotify-cover">
+                    <div class="widget__spotify-info">
+                        <span class="widget__spotify-title">Trance Work Music</span>
+                        <span class="widget__spotify-artist">Dannic, Basshunter, Dimrain47, Mangoo</span>
+                        <div class="widget__spotify-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/><path d="M17.9 10.9C14.7 9 9.4 8.8 6.4 9.7c-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1C9.1 7 15.1 7.2 18.8 9.4c.4.3.6.8.3 1.3-.2.4-.7.5-1.2.2zm-.2 2.7c-.2.4-.7.5-1 .3C14 12.3 10 11.8 7 12.8c-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1C10 10.1 14.5 10.6 17.5 12.4c.3.2.5.7.2 1.2zm-1.1 2.6c-.2.3-.5.4-.8.2C13.4 14.8 10.4 14.5 7.4 15.2c-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8C10.5 13 13.7 13.4 16.5 15.1c.3.2.4.6.1.9z" fill="#fff"/></svg>
+                            Spotify
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://open.spotify.com/artist/0Qfz1JTutH0uniNel8gcID" class="widget widget--spotify widget--2x2" target="_blank" rel="noopener">
+                <div class="widget__spotify-inner">
+                    <img src="assets/images/artist-doudou.jpeg" alt="DOU DOU" class="widget__spotify-cover">
+                    <div class="widget__spotify-info">
+                        <span class="widget__spotify-title">DOU DOU</span>
+                        <span class="widget__spotify-artist">Bilingual singer-songwriter</span>
+                        <div class="widget__spotify-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/><path d="M17.9 10.9C14.7 9 9.4 8.8 6.4 9.7c-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1C9.1 7 15.1 7.2 18.8 9.4c.4.3.6.8.3 1.3-.2.4-.7.5-1.2.2zm-.2 2.7c-.2.4-.7.5-1 .3C14 12.3 10 11.8 7 12.8c-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1C10 10.1 14.5 10.6 17.5 12.4c.3.2.5.7.2 1.2zm-1.1 2.6c-.2.3-.5.4-.8.2C13.4 14.8 10.4 14.5 7.4 15.2c-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8C10.5 13 13.7 13.4 16.5 15.1c.3.2.4.6.1.9z" fill="#fff"/></svg>
+                            Spotify
+                        </div>
+                    </div>
+                </div>
+            </a>
         </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2024 Incepto House. Built with ❤️ in Menlo Park.</p>
-            <p><a href="https://bento.me/incepto" target="_blank" rel="noopener">Original Bento Page</a></p>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <span class="theme-toggle-icon" id="theme-icon">☀️</span>
-                <span id="theme-label">Light</span>
-            </button>
-        </footer>
     </div>
+
+    <!-- Footer -->
+    <footer class="bento-footer">
+        <p>&copy; 2024 Incepto House. Built with love in Menlo Park.</p>
+        <p><a href="https://bento.me/incepto" target="_blank" rel="noopener">Original Bento Page</a></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -1,4 +1,4 @@
-// Incepto House Website - Interactive Features
+// Incepto House — Interactive Features
 
 // Theme Management
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,16 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.setAttribute('data-theme', resolved);
     }
 
-    // mode: 'light', 'dark', or 'system'
     function updateToggleUI(mode) {
         if (mode === 'system') {
-            icon.textContent = '💻';
+            icon.textContent = '\uD83D\uDCBB';
             label.textContent = 'System';
         } else if (mode === 'dark') {
-            icon.textContent = '🌙';
+            icon.textContent = '\uD83C\uDF19';
             label.textContent = 'Dark';
         } else {
-            icon.textContent = '☀️';
+            icon.textContent = '\u2600\uFE0F';
             label.textContent = 'Light';
         }
     }
@@ -33,13 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return localStorage.getItem('theme') || 'system';
     }
 
-    // Set initial UI
     updateToggleUI(getMode());
 
     if (toggle) {
         toggle.addEventListener('click', () => {
             const mode = getMode();
-            // Cycle: light → dark → system → light
             var next;
             if (mode === 'light') next = 'dark';
             else if (mode === 'dark') next = 'system';
@@ -56,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Follow system changes when in system mode
     systemDark.addEventListener('change', () => {
         if (!localStorage.getItem('theme')) {
             applyTheme(getSystemTheme());
@@ -64,27 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Lazy Loading Images
+// Lightbox & Intersection Observer
 document.addEventListener('DOMContentLoaded', () => {
-    // Add smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // Lightbox for photo widgets
+    const photoWidgets = document.querySelectorAll('.widget--photo[data-lightbox]');
+    photoWidgets.forEach(widget => {
+        widget.addEventListener('click', () => {
+            const img = widget.querySelector('img');
+            if (!img) return;
 
-    // Image Gallery Lightbox (Simple Version)
-    const galleryImages = document.querySelectorAll('.photo-grid img');
-    galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            // Create lightbox overlay
             const lightbox = document.createElement('div');
             lightbox.className = 'lightbox';
             lightbox.innerHTML = `
@@ -97,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(lightbox);
             document.body.style.overflow = 'hidden';
 
-            // Add lightbox styles if not already present
             if (!document.getElementById('lightbox-styles')) {
                 const style = document.createElement('style');
                 style.id = 'lightbox-styles';
@@ -142,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.head.appendChild(style);
             }
 
-            // Close lightbox on click
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
                     lightbox.remove();
@@ -150,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Close on escape key
             document.addEventListener('keydown', function closeOnEscape(e) {
                 if (e.key === 'Escape') {
                     lightbox.remove();
@@ -161,97 +142,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add loading animation for cards
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
+    // Intersection observer for widget fade-in (widgets beyond the first 10)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('widget--visible');
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.05, rootMargin: '200px 0px 200px 0px' });
 
-    // Observe all cards
-    const cards = document.querySelectorAll('.startup-card, .playlist-card, .link-card, .community-card, .fun-card, .research-card');
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    const widgets = document.querySelectorAll('.widget');
+    widgets.forEach((widget, i) => {
+        if (i >= 10) {
+            widget.classList.add('widget--deferred');
+            observer.observe(widget);
+        }
     });
 
-    // Add external link indicator
-    const externalLinks = document.querySelectorAll('a[target="_blank"]');
-    externalLinks.forEach(link => {
+    // External link safety
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
     // Console Easter Egg
-    console.log('%c🏠 Welcome to Incepto House!', 'font-size: 20px; font-weight: bold; color: #0066ff;');
+    console.log('%c\uD83C\uDFE0 Welcome to Incepto House!', 'font-size: 20px; font-weight: bold; color: #0066ff;');
     console.log('%cHeart-centered intellectual community in Menlo Park, CA', 'font-size: 14px; color: #565656;');
-    console.log('%cBuilt with ❤️ using Claude Code', 'font-size: 12px; color: #8e8e8e;');
-
-    // Performance logging (optional, can be removed in production)
-    window.addEventListener('load', () => {
-        const perfData = performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`⚡ Page loaded in ${pageLoadTime}ms`);
-    });
-
-    // Add hover effect sound preparation (optional)
-    // This is just a placeholder - you can add actual sound effects if desired
-    const addHoverSounds = false; // Set to true if you want to add sounds
-    if (addHoverSounds) {
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                // Add subtle hover sound here if desired
-                // const audio = new Audio('assets/sounds/hover.mp3');
-                // audio.volume = 0.1;
-                // audio.play().catch(() => {});
-            });
-        });
-    }
 });
 
-// Add parallax effect to header (optional)
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    if (header) {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.3;
-        header.style.transform = `translateY(${rate}px)`;
-    }
-});
-
-// Add copy email functionality
-const contactEmail = document.querySelector('.contact a');
+// Copy email functionality
+const contactEmail = document.querySelector('.sidebar-contact a');
 if (contactEmail) {
     contactEmail.addEventListener('click', (e) => {
         const email = contactEmail.textContent;
         if (navigator.clipboard) {
             navigator.clipboard.writeText(email).then(() => {
-                // Show tooltip
                 const tooltip = document.createElement('span');
                 tooltip.textContent = 'Email copied!';
                 tooltip.style.cssText = `
                     position: absolute;
                     background: #0066ff;
                     color: white;
-                    padding: 8px 12px;
+                    padding: 6px 10px;
                     border-radius: 6px;
-                    font-size: 12px;
-                    margin-left: 10px;
+                    font-size: 11px;
+                    margin-left: 8px;
                     animation: fadeIn 0.3s ease;
                 `;
+                contactEmail.parentNode.style.position = 'relative';
                 contactEmail.parentNode.appendChild(tooltip);
-
                 setTimeout(() => {
                     tooltip.style.opacity = '0';
+                    tooltip.style.transition = 'opacity 0.3s';
                     setTimeout(() => tooltip.remove(), 300);
                 }, 2000);
             });
@@ -259,20 +201,10 @@ if (contactEmail) {
     });
 }
 
-// Detect if user prefers reduced motion
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (prefersReducedMotion) {
-    // Disable animations
-    document.querySelectorAll('*').forEach(el => {
+// Reduced motion support
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.widget').forEach(el => {
         el.style.animation = 'none';
         el.style.transition = 'none';
     });
-}
-
-// Add service worker for PWA (optional future enhancement)
-if ('serviceWorker' in navigator) {
-    // Uncomment when you want to add PWA functionality
-    // window.addEventListener('load', () => {
-    //     navigator.serviceWorker.register('/sw.js');
-    // });
 }
