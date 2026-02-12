@@ -135,7 +135,7 @@ img {
 /* Bento Grid */
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing);
     margin-bottom: 48px;
 }
@@ -247,7 +247,7 @@ section h2 {
 /* Startup Cards */
 .startup-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -407,6 +407,10 @@ section h2 {
 
     section h2 {
         font-size: 24px;
+    }
+
+    .startup-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
