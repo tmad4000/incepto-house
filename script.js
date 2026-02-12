@@ -1,5 +1,45 @@
 // Incepto House Website - Interactive Features
 
+// Theme Management
+document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggle
+    const toggle = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    const label = document.getElementById('theme-label');
+
+    function updateToggleUI(theme) {
+        if (theme === 'dark') {
+            icon.textContent = '🌙';
+            label.textContent = 'Dark';
+        } else {
+            icon.textContent = '☀️';
+            label.textContent = 'Light';
+        }
+    }
+
+    // Set initial UI state
+    updateToggleUI(document.documentElement.getAttribute('data-theme'));
+
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateToggleUI(next);
+        });
+    }
+
+    // Listen for system theme changes (only if user hasn't manually chosen)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const theme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            updateToggleUI(theme);
+        }
+    });
+});
+
 // Lazy Loading Images
 document.addEventListener('DOMContentLoaded', () => {
     // Add smooth scroll behavior

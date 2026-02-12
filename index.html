@@ -8,6 +8,14 @@
     <link rel="icon" href="assets/images/87_users%252Fclijshtx200mrol01rllybfmx%252FTitNTkLOB3dXeNn6-E289C0B4-B5B9-45B6-8467-81AAD3AE836C.jpeg">
     <link rel="stylesheet" href="assets/css/3_inter.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var s = localStorage.getItem('theme');
+            var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', s || (d ? 'dark' : 'light'));
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -285,6 +293,10 @@
         <footer class="footer">
             <p>&copy; 2024 Incepto House. Built with ❤️ in Menlo Park.</p>
             <p><a href="https://bento.me/incepto" target="_blank" rel="noopener">Original Bento Page</a></p>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle-icon" id="theme-icon">☀️</span>
+                <span id="theme-label">Light</span>
+            </button>
         </footer>
     </div>
 
