@@ -2,13 +2,25 @@
 
 // Theme Management
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme toggle
     const toggle = document.getElementById('theme-toggle');
     const icon = document.getElementById('theme-icon');
     const label = document.getElementById('theme-label');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    function updateToggleUI(theme) {
-        if (theme === 'dark') {
+    function getSystemTheme() {
+        return systemDark.matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(resolved) {
+        document.documentElement.setAttribute('data-theme', resolved);
+    }
+
+    // mode: 'light', 'dark', or 'system'
+    function updateToggleUI(mode) {
+        if (mode === 'system') {
+            icon.textContent = '💻';
+            label.textContent = 'System';
+        } else if (mode === 'dark') {
             icon.textContent = '🌙';
             label.textContent = 'Dark';
         } else {
@@ -17,25 +29,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Set initial UI state
-    updateToggleUI(document.documentElement.getAttribute('data-theme'));
+    function getMode() {
+        return localStorage.getItem('theme') || 'system';
+    }
+
+    // Set initial UI
+    updateToggleUI(getMode());
 
     if (toggle) {
         toggle.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
+            const mode = getMode();
+            // Cycle: light → dark → system → light
+            var next;
+            if (mode === 'light') next = 'dark';
+            else if (mode === 'dark') next = 'system';
+            else next = 'light';
+
+            if (next === 'system') {
+                localStorage.removeItem('theme');
+                applyTheme(getSystemTheme());
+            } else {
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+            }
             updateToggleUI(next);
         });
     }
 
-    // Listen for system theme changes (only if user hasn't manually chosen)
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    // Follow system changes when in system mode
+    systemDark.addEventListener('change', () => {
         if (!localStorage.getItem('theme')) {
-            const theme = e.matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-            updateToggleUI(theme);
+            applyTheme(getSystemTheme());
         }
     });
 });
