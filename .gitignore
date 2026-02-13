@@ -1,8 +1,5 @@
 # Screenshots and test images
-*.png
-full-page-check.png
-screenshot*.png
-test-full.png
+screenshots/
 
 # Logs
 *.log
