@@ -212,3 +212,11 @@ The neighborhood map recreates Bento’s soft colors and blue halo with direct O
 Tiles load directly in the browser with its normal cache and a valid Referer; do not bulk-download, prefetch beyond the viewport, or archive them. Keep the visible OpenStreetMap attribution and copyright link. Tile service policy: https://operations.osmfoundation.org/policies/tiles/. If tiles cannot load, the labeled neighborhood link remains usable.
 
 Smoke checks: compare the hero against `screenshots/bento-original-desktop-1280.png` and `screenshots/bento-original-mobile-375.png`; verify square map/living-room cards and all nine map tiles, desktop/mobile grid positions without horizontal overflow, title and backyard lightboxes, and theme cycling. No build or environment variables required. Deploy only `index.html`, `styles.css`, `script.js`, and `assets/` to Vercel; keep archived HTML/MHTML, screenshots, and Beads files out of the public deployment.
+
+### Lower-section design review (v1.2.0)
+
+Useful Links, Built by Inceptans, projects and playlists now have semantic sections with their own responsive grids. Resource/project links use compact horizontal cards, companies use three columns on desktop and two on mobile, and the three music cards share a row on desktop and stack on mobile. Consistent heading spacing, readable titles/domains, contained icons, media captions and keyboard focus states replace the oversized square-card treatment. The art lightbox is now a native keyboard-accessible button. The restored hero/map geometry is unchanged.
+
+All 34 link destinations are preserved. Five broken thumbnail references are replaced by the existing Ideaflow favicon, decorative document/research icons, and a neutral AH monogram; every remaining local image path resolves. The useful-link map and Qigong illustrations are inline SVG rather than tiny webpage screenshots. No new dependencies.
+
+Check `/#useful-links`, `/#built-by-inceptans`, `/#community-projects`, and `/#playlists` at desktop and narrow mobile widths. Verify no horizontal overflow or clipped cards, both themes, visible keyboard focus, Enter/Escape on the art lightbox, and local image loading. Deployment uses the same public-only Vercel staging procedure described above.
