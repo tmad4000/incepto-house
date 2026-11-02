@@ -220,3 +220,18 @@ Useful Links, Built by Inceptans, projects and playlists now have semantic secti
 All 34 link destinations are preserved. Five broken thumbnail references are replaced by the existing Ideaflow favicon, decorative document/research icons, and a neutral AH monogram; every remaining local image path resolves. The useful-link map and Qigong illustrations are inline SVG rather than tiny webpage screenshots. No new dependencies.
 
 Check `/#useful-links`, `/#built-by-inceptans`, `/#community-projects`, and `/#playlists` at desktop and narrow mobile widths. Verify no horizontal overflow or clipped cards, both themes, visible keyboard focus, Enter/Escape on the art lightbox, and local image loading. Deployment uses the same public-only Vercel staging procedure described above.
+
+### Compact Bento refinement (v1.2.1)
+
+Applies the Opus visual review approved by Jacob: a common four-column lower grid (two columns on mobile), compact 116px desktop / 108px mobile link tiles, 16px corners, quiet 15px section labels without subtitles, and title/domain text kept together. Arrows appear only on hover or keyboard focus. Art and video span two columns and two rows on desktop, becoming full-width on mobile. Music cards span two columns with small horizontal covers; DOU DOU is labeled as an artist. Sidebar heading leading is tightened to 1.05. Existing hero/map geometry and all 34 link destinations are preserved.
+
+Company favicons below were retrieved from the linked sites’ declared icon URLs, replacing miniature social-preview screenshots. OpenAI uses a neutral OA monogram because the homepage favicon could not be retrieved. New icons have no white wrapper background.
+
+- `assets/images/icon-cresta.png`: https://cdn.prod.website-files.com/67fe49bf21b9f9d5b910d3c9/687226b772882bc86937e3d4_favicon.png
+- `assets/images/icon-outliers.svg`: https://outliers.fund/resources/favicon.svg
+- `assets/images/icon-truefi.png`: https://us1.discourse-cdn.com/flex016/uploads/truefi/optimized/1X/43b6a66b28c16919c778ac5d9b488abc7bc6989f_2_32x32.png
+- `assets/images/icon-luminai.png`: https://www.luminai.com/icon.png?icon.1qnje7du1iaru.png
+- `assets/images/icon-exa.png`: https://exa.ai/images/favicon-32x32.png
+- `assets/images/icon-ambience.png`: https://framerusercontent.com/images/JGLaqccr3WckYkcaATG7wTbIw4E.png
+
+Validation: desktop and narrow mobile layouts show no horizontal overflow or overflowing cards; light/dark themes checked; local image paths and unchanged destinations audited. No new dependencies or build step.
