@@ -52,8 +52,8 @@ incepto-house-clone/
 
 2. **Or use a local server**:
    ```bash
-   python3 -m http.server 8000
-   # Then visit: http://localhost:8000/index.html
+   python3 -m http.server 8739 --bind 127.0.0.1
+   # Then visit: http://127.0.0.1:8739/index.html (check the port is free first)
    ```
 
 ### Deployment Options
@@ -182,3 +182,11 @@ For inquiries about Incepto House: incepto.house@gmail.com
 ---
 
 **Built with Claude Code** - Making website updates as easy as having a conversation!
+
+## Backyard image repair (v1.0.1)
+
+The redundant broken backyard card was removed. It referenced a missing image containing the same patio photo plus an old title overlay. The clean patio photo remains, labeled `Backyard`, with its existing lightbox.
+
+This static site needs no environment variables or build. For a smoke check, open `/`, verify the Backyard image loads, then click it and verify the full image in the lightbox. Check desktop and mobile layouts.
+
+Production is Vercel project `incepto-house-clone` under scope `unlinkedai`, serving `https://incepto.house/`. The canonical project directory is Jacob’s profile at `https://social.ideaflow.app/u/jacob`.
