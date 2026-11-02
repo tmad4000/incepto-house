@@ -235,3 +235,9 @@ Company favicons below were retrieved from the linked sites’ declared icon URL
 - `assets/images/icon-ambience.png`: https://framerusercontent.com/images/JGLaqccr3WckYkcaATG7wTbIw4E.png
 
 Validation: desktop and narrow mobile layouts show no horizontal overflow or overflowing cards; light/dark themes checked; local image paths and unchanged destinations audited. No new dependencies or build step.
+
+### Denser link rows (v1.2.2)
+
+Removes fixed heights from the ordinary link tiles and puts 22px icons beside title/domain text. Cards now size to content, with 8px grid gaps, 10px corners, and 24px between desktop sections (20px on mobile). Project media uses smaller two-row anchors; music covers are 44px. No destinations or content changed.
+
+Measured desktop lower sections plus their intervening gaps shrink from approximately 1,768px in v1.2.1 to 1,063px, about 40%. Checked narrow mobile and desktop for card/text overflow and inspected both themes. Hero mosaic placement remains unchanged.
