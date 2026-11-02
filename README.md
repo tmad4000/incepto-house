@@ -190,3 +190,7 @@ The redundant broken backyard card was removed. It referenced a missing image co
 This static site needs no environment variables or build. For a smoke check, open `/`, verify the Backyard image loads, then click it and verify the full image in the lightbox. Check desktop and mobile layouts.
 
 Production is Vercel project `incepto-house-clone` under scope `unlinkedai`, serving `https://incepto.house/`. The canonical project directory is Jacob’s profile at `https://social.ideaflow.app/u/jacob`.
+
+### Photo grid correction (v1.0.2)
+
+Workspace and backyard now span two columns so removing the duplicate does not leave a hole. The house-map card fills the remaining half-row beside the kitchen, and the quote spans the full grid. Verify these opening rows at desktop, tablet and mobile widths; retain the existing source order and lightboxes.
