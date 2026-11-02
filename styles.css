@@ -4,7 +4,7 @@
 
 /* CSS Variables */
 :root {
-    --bg: #f0f0f0;
+    --bg: #ffffff;
     --card-bg: #ffffff;
     --text-primary: #1a1a1a;
     --text-secondary: #565656;
@@ -13,10 +13,10 @@
     --border: #e8e8e8;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
-    --radius: 16px;
+    --radius: 24px;
     --radius-sm: 12px;
-    --gap: 12px;
-    --sidebar-width: 280px;
+    --gap: 40px;
+    --sidebar-width: 235px;
 
     /* Brand colors */
     --spotify: #1DB954;
@@ -76,10 +76,10 @@ img {
 
 .bento-page {
     display: flex;
-    gap: 24px;
-    max-width: 1200px;
+    gap: 95px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 32px 24px;
+    padding: 100px 64px 48px;
 }
 
 /* ================================================
@@ -94,22 +94,22 @@ img {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 8px;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
+    width: 184px;
+    height: 184px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--border);
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .sidebar-title {
-    font-size: 28px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 12px;
@@ -117,14 +117,14 @@ img {
 }
 
 .sidebar-bio {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 12px;
 }
 
 .sidebar-contact {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--text-tertiary);
     margin-bottom: 24px;
 }
@@ -230,35 +230,65 @@ a.widget:active {
     font-weight: 500;
 }
 
-/* ================================================
-   Map Widget
-   ================================================ */
-
-.widget--map {
-    display: flex;
-    flex-direction: column;
-    min-height: 240px;
+/* Original Bento hero: 4-column desktop and 2-column mobile placement. */
+.house-gallery {
+    grid-column: 1 / -1;
+    container-type: inline-size;
+    min-width: 0;
 }
 
-.widget--map iframe {
-    display: block;
-    width: 100%;
-    height: 240px;
-    flex: 1;
-    border: 0;
+.house-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: calc((100cqw - 3 * var(--gap)) / 4);
+    gap: var(--gap);
 }
 
-.widget__map-link {
-    display: block;
-    padding: 8px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
+.gallery-intro { grid-area: 1 / 1 / 2 / 3; }
+.gallery-living { grid-area: 2 / 1 / 4 / 3; }
+.gallery-dining { grid-area: 4 / 1 / 5 / 3; }
+.gallery-workspace { grid-area: 3 / 3 / 4 / 4; }
+.gallery-kitchen { grid-area: 5 / 2 / 6 / 4; }
+.gallery-backyard { grid-area: 3 / 4 / 5 / 5; }
+.gallery-map { grid-area: 1 / 3 / 3 / 5; }
+.gallery-quote { grid-area: 5 / 1 / 7 / 2; }
 
-.widget__map-link:hover {
-    text-decoration: underline;
+.house-gallery .widget--photo img { min-height: 0; }
+.gallery-intro img { object-position: center; }
+.house-gallery .gallery-quote { padding: clamp(16px, 3cqw, 24px); }
+.gallery-quote .widget__quote-text { font-size: clamp(14px, 2.2cqw, 18px); }
+
+/* Public neighborhood overview. The halo is approximate, never a house pin. */
+.neighborhood-map { background: #f5f7f2; isolation: isolate; }
+.neighborhood-map__link { position: absolute; inset: 0; display: block; }
+.neighborhood-map__tiles { position: absolute; inset: 0; overflow: hidden; filter: saturate(.45) contrast(.72) brightness(1.18); opacity: .66; }
+.neighborhood-map__tiles img { position: absolute; width: 50%; height: 50%; max-width: none; }
+.neighborhood-map__halo {
+    position: absolute;
+    left: 50%; top: 50%; width: 76px; height: 76px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, #739df499 0%, #83aff275 38%, #95b8f42b 65%, transparent 75%);
 }
+.neighborhood-map__halo::after {
+    content: "";
+    position: absolute; inset: 23px;
+    border: 2px solid #ffffffd9;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #8eb0f64d;
+}
+.neighborhood-map__caption {
+    position: absolute; left: 14px; right: 10px; bottom: 26px;
+    color: #464f48; font-size: 12px; font-weight: 500;
+    text-shadow: 0 1px 3px white, 0 0 8px white;
+}
+.neighborhood-map__attribution {
+    position: absolute; bottom: 3px; right: 6px;
+    font-size: 9px; line-height: 1.5; color: #39433b;
+    background: #ffffffe6; border-radius: 3px; padding: 1px 3px;
+}
+.neighborhood-map__attribution:hover { text-decoration: underline; }
+.neighborhood-map__link:focus-visible { outline: 3px solid var(--accent); outline-offset: -5px; border-radius: inherit; }
 
 /* ================================================
    Link Widget
@@ -266,9 +296,11 @@ a.widget:active {
 
 .widget--link {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
-    padding: 14px 16px;
+    padding: 24px;
+    aspect-ratio: 1;
     cursor: pointer;
 }
 
@@ -281,6 +313,8 @@ a.widget:active {
 }
 
 .widget__link-text {
+    width: 100%;
+    flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -290,12 +324,16 @@ a.widget:active {
     font-size: 13px;
     font-weight: 600;
     color: var(--text-primary);
-    white-space: nowrap;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.25;
 }
 
 .widget__link-host {
+    margin-top: auto;
     font-size: 11px;
     color: var(--text-tertiary);
     white-space: nowrap;
@@ -310,7 +348,7 @@ a.widget:active {
 .widget--header {
     background: transparent;
     border: none;
-    padding: 16px 4px 4px;
+    padding: 48px 0 0;
     box-shadow: none;
 }
 
@@ -332,17 +370,17 @@ a.widget:active {
 .widget--quote {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 28px 24px;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    text-align: left;
 }
 
 .widget__quote-mark {
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1;
-    color: var(--text-tertiary);
-    opacity: 0.4;
+    color: var(--text-primary);
+    opacity: 0.8;
     margin-bottom: 4px;
 }
 
@@ -569,65 +607,38 @@ a.widget:active {
    ================================================ */
 
 @media (max-width: 1024px) {
-    .bento-page {
-        flex-direction: column;
-        align-items: center;
-        padding: 24px 16px;
-    }
-
-    .bento-sidebar {
-        position: static;
-        width: 100%;
-        max-width: 480px;
-        min-width: unset;
-        margin-bottom: 16px;
-    }
-
-    .bento-grid {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 700px;
-        width: 100%;
-    }
+    :root { --gap: 24px; --radius: 22px; }
+    .bento-page { flex-direction: column; align-items: center; gap: 40px; padding: 48px 24px; }
+    .bento-sidebar { position: static; width: 100%; max-width: 390px; min-width: 0; padding: 0 24px; }
+    .avatar { width: 120px; height: 120px; }
+    .sidebar-title { font-size: 28px; }
+    .sidebar-bio { font-size: 14px; }
+    .sidebar-contact { font-size: 13px; }
+    .bento-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 390px; width: 100%; }
+    .house-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: calc((100cqw - var(--gap)) / 2); }
+    .gallery-intro { grid-area: 1 / 1 / 2 / 3; }
+    .gallery-living { grid-area: 2 / 1 / 4 / 3; }
+    .gallery-dining { grid-area: 4 / 1 / 5 / 2; }
+    .gallery-workspace { grid-area: 4 / 2 / 5 / 3; }
+    .gallery-kitchen { grid-area: 5 / 1 / 6 / 2; }
+    .gallery-backyard { grid-area: 5 / 2 / 6 / 3; }
+    .gallery-map { grid-area: 6 / 1 / 8 / 3; }
+    .gallery-quote { grid-area: 8 / 2 / 10 / 3; }
+    .widget--header { padding-top: 32px; }
 }
 
-/* ================================================
-   Responsive: Mobile (2-col grid, stacked cards)
-   ================================================ */
-
 @media (max-width: 640px) {
-    .bento-page {
-        padding: 16px 12px;
-    }
-
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .widget--2x2 {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .avatar {
-        width: 80px;
-        height: 80px;
-    }
-
-    .sidebar-title {
-        font-size: 24px;
-    }
-
-    .widget__quote-text {
-        font-size: 16px;
-    }
-
-    .widget__spotify-inner {
-        padding: 10px;
-    }
-
-    .widget__spotify-cover {
-        width: 60px;
-        height: 60px;
-    }
+    :root { --gap: 20px; }
+    .bento-page { padding: 32px 24px; }
+    .sidebar-title { font-size: 24px; }
+    .widget--link { padding: 16px; gap: 10px; }
+    .widget__icon { width: 32px; height: 32px; }
+    .widget__link-title { font-size: 12px; }
+    .widget__link-host { font-size: 10px; }
+    .widget--quote { padding: 20px; }
+    .widget__quote-text { font-size: 15px; }
+    .widget__quote-cite { font-size: 11px; }
+    .widget--2x2 { grid-column: span 2; grid-row: span 1; }
+    .widget__spotify-inner { padding: 14px; }
+    .widget__spotify-cover { width: 60px; height: 60px; }
 }
